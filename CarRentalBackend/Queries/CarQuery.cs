@@ -16,12 +16,12 @@ namespace CarRentalBackend.Queries
 
         public async Task<IEnumerable<Car>> GetAllCarsAsync()
         {
-            return await _context.Cars.Include(c => c.Model).ToListAsync();
+            return await _context.Cars.Include(c => c.Model).Include(c => c.Model.Brand).ToListAsync();
         }
 
         public async Task<Car> GetCarByIdAsync(int id)
         {
-            return await _context.Cars.Include(c => c.Model).FirstOrDefaultAsync(c => c.CarId == id);
+            return await _context.Cars.Include(c => c.Model).Include(c => c.Model.Brand).FirstOrDefaultAsync(c => c.CarId == id);
         }
 
         public async Task<Car> AddCarAsync(Car car)

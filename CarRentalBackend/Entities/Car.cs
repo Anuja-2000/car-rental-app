@@ -14,6 +14,29 @@ namespace CarRentalBackend.Entities
         [Required]
         public string Color { get; set; }
 
+        [Required]
+        public string GearBox { get; set; }
+
+        [Required]
+        public string FuelType { get; set; }
+
+        [Required]
+        public int Doors { get; set; }
+
+        [Required]
+        public string AirConditioner { get; set; }
+
+        [Required]
+        public int Seats { get; set; }
+
+        [Required]
+        public string ImageUrl { get; set; }
+
+        [Required]
+        public double Distance { get; set; }
+
+        [Required]
+        public double RentPrice { get; set; }
 
         // Foreign Key: ModelId
         public int ModelId { get; set; }
