@@ -49,6 +49,14 @@ namespace CarRentalBackend.Controllers
             {
                 LicensePlateNumber = carDto.LicensePlateNumber,
                 Color = carDto.Color,
+                GearBox = carDto.GearBox,
+                FuelType = carDto.FuelType,
+                Doors = carDto.Doors,
+                AirConditioner = carDto.AirConditioner,
+                Seats = carDto.Seats,
+                ImageUrl = carDto.ImageUrl,
+                Distance = carDto.Distance,
+                RentPrice = carDto.RentPrice,
                 ModelId = carDto.ModelId
             };
 

@@ -3,7 +3,8 @@ car-rental-app-frontend/.env
 car-rental-app-frontend/package-lock.json
 car-rental-app-frontend/.next
 CarRentalBackend/.vs
-**/obj
-**/bin
-
-
+CarRentalBackend/bin
+CarRentalBackend/obj
+CarRentalBackend/appsettings.json
+CarRentalBackend/obj/Debug/net8.0/CarRentalBackend.AssemblyInfo.cs
+CarRentalBackend/obj/Debug/net8.0/CarRentalBackend.AssemblyInfoInputs.cache
