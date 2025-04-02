@@ -5,3 +5,6 @@ car-rental-app-frontend/.next
 CarRentalBackend/.vs
 CarRentalBackend/bin
 CarRentalBackend/obj
+CarRentalBackend/appsettings.json
+CarRentalBackend/obj/Debug/net8.0/CarRentalBackend.AssemblyInfo.cs
+CarRentalBackend/obj/Debug/net8.0/CarRentalBackend.AssemblyInfoInputs.cache

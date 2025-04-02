@@ -1,3 +1,4 @@
+"use client";
 import styles from '../styles/HomePage.module.css';
 //import images from '../assets/images/carblur.png'
 import Image from 'next/image';
@@ -6,10 +7,46 @@ import vector from '../assets/images/Vector.png'
 import ArrowRight from '../assets/images/arrow-right.svg'
 import BookCarForm from '@/components/bookCarForm';
 import CarDetailsCard from '@/components/carDetailsCard';
+import React from 'react';
+import axios from 'axios';
 
 
 
 const Home: React.FC = () => {
+
+  const [cars, setCars] = React.useState([{
+    carId: 0,
+    licensePlateNumber: 'string',
+    color: 'string',
+    gearBox: 'string',
+    fuelType: 'string',
+    doors: 0,
+    airConditioner: 'string',
+    seats: 0,
+    imageUrl: 'string',
+    distance: 0,
+    rentPrice: 0,
+    modelId: 0,
+    model: {
+      modelId: 0,
+      modelName: 'string',
+      modelType: 'string',
+      brandId: 0,
+      brand: {
+        id: 0,
+        brandName: 'string'
+      }
+    }
+  }]);
+
+  React.useEffect(() => {
+    axios.get('http://localhost:5198/api/Car')
+    .then((response) => {
+      setCars(response.data);
+    }).catch((error) => {
+      console.log(error);
+    });
+    }, []);
   return (
     <div>
       {/* Hero Section */}
@@ -137,12 +174,18 @@ const Home: React.FC = () => {
   </div>
   </div>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <CarDetailsCard />
-    <CarDetailsCard />
-    <CarDetailsCard />
-    <CarDetailsCard />
-    <CarDetailsCard />
-    <CarDetailsCard />
+    {cars.slice(0, 6).map((car) => (
+    <CarDetailsCard 
+    brand={car.model.brand.brandName}
+    model={car.model.modelName}
+    type={car.model.modelType}
+    image={car.imageUrl}
+    transmission={car.gearBox}
+    fuelType={car.fuelType}
+    airCon={car.airConditioner}
+    price={car.rentPrice}
+    description={car.model.brand.brandName}
+    key={car.carId} />))}
   </div>
 </div>
 

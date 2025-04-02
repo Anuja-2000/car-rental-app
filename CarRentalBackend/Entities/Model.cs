@@ -12,6 +12,8 @@ namespace CarRentalBackend.Entities
         [Required]
         public string ModelName { get; set; }
 
+        [Required]
+        public string ModelType { get; set; }
         // Foreign Key: BrandId
         public int BrandId { get; set; }
 
